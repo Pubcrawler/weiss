@@ -1,10 +1,10 @@
 {
-  "name": "Realtime",
+  "name": "Pubcrawler Frontend",
   "version": "0.0.1",
-  "description": "Realtime dashboard for Ruter stops",
+  "description": "Frontend React application for Pubcrawler",
   "main": "index.js",
   "repository": "https://github.com/hawkaa/realtime",
-  "author": "Håkon Åmdal",
+  "author": "Pubcrawler",
   "license": "MIT",
   "scripts": {
     "build": "webpack",
