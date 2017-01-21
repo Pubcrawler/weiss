@@ -1,5 +1,5 @@
 {
-  "name": "Pubcrawler Frontend",
+  "name": "pubcrawler-frontend",
   "version": "0.0.1",
   "description": "Frontend React application for Pubcrawler",
   "main": "index.js",
