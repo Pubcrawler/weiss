@@ -4,6 +4,8 @@
 ```
 $ yarn install
 ```
+This will install all dependencies and build the application for production.
+
 
 ## Development
 Run development server:
