@@ -1,14 +1,18 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
-  entry: {
-    app: './index.jsx',
-  },
+  target: 'web',
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-hot-middleware/client',
+    './index.jsx',
+  ],
   output: {
-    filename: 'realtime.bundle.js',
-    path: path.resolve(__dirname, './dist/assets'),
-    publicPath: '/assets',
+    filename: 'assets/pubcrawler.bundle.js',
+    path: path.resolve(__dirname, './dist/'),
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -16,13 +20,14 @@ module.exports = {
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
+      exclude: '/node_modules/',
       use: [{
         loader: 'babel-loader',
         options: { presets: ['latest', 'react'] },
       }],
     }],
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, './public'),
-  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };
