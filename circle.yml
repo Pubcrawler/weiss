@@ -2,3 +2,8 @@ test:
   override:
     - npm run lint
     - npm run test
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: pubcrawler-frontend
