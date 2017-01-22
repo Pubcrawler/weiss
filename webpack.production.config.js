@@ -1,14 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
   target: 'web',
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-hot-middleware/client',
-    './index.jsx',
-  ],
+  entry: './index.jsx',
   output: {
     filename: 'assets/pubcrawler.bundle.js',
     path: path.resolve(__dirname, './dist/'),
@@ -27,7 +22,4 @@ module.exports = {
       }],
     }],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
 };
