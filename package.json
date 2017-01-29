@@ -10,7 +10,7 @@
     "build": "webpack -p --config webpack.production.config.js",
     "start": "babel-node server/server.js",
     "start-production": "NODE_ENV=production node dist/server.js",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --ignore-path .gitignore . --ext .js --ext .jsx",
     "test": "jest"
   },
   "dependencies": {
