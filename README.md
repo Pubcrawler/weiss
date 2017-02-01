@@ -17,3 +17,13 @@ Run ESlint:
 ```
 $ yarn lint
 ```
+
+## Production
+Build the application by running:
+```
+$ yarn build
+```
+This will bundle the javascript to the `dist/` directory. You may then run the built server with:
+```
+$ yarn start-production
+```

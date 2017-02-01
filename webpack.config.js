@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
@@ -10,8 +11,8 @@ module.exports = {
     './index.jsx',
   ],
   output: {
-    filename: 'assets/pubcrawler.bundle.js',
-    path: path.resolve(__dirname, './dist/'),
+    filename: 'pubcrawler.bundle.js',
+    path: path.resolve(__dirname, './dist/assets'),
     publicPath: '/',
   },
   resolve: {
@@ -29,5 +30,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src', 'index.ejs'),
+    }),
   ],
 };
