@@ -10,7 +10,7 @@ const app = express();
 
 
 if (process.env.NODE_ENV !== 'production') {
-  console.log('Running in development mode with webpack hot realoding middleware.');
+  console.log('Running in development mode with webpack hot reloading middleware.');
   const config = require('../webpack.config.js'); // eslint-disable-line
   const compiler = webpack(config);
   app.use(webpackHotMiddleware(compiler));
