@@ -6,7 +6,6 @@ module.exports = {
   context: path.resolve(__dirname, './src'),
   target: 'web',
   entry: [
-    'react-hot-loader/patch',
     'webpack-hot-middleware/client',
     './index.jsx',
   ],
@@ -24,7 +23,7 @@ module.exports = {
       exclude: '/node_modules/',
       use: [{
         loader: 'babel-loader',
-        options: { presets: ['latest', 'react'] },
+        options: { presets: ['latest'] },
       }],
     }],
   },
