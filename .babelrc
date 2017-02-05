@@ -1,7 +1,3 @@
 {
-  "presets": ["env", "latest"],
-  "plugins": [
-    "babel-plugin-syntax-jsx",
-    ["babel-plugin-inferno", {"imports": true}]
-  ]
+  "presets": ["env", "react"]
 }

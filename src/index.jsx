@@ -1,18 +1,24 @@
-import Inferno from 'inferno';
+import { AppContainer } from 'react-hot-loader';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
 
 const rootEl = document.getElementById('root');
-Inferno.render(
-    <App />,
-    rootEl,
+ReactDOM.render(
+  <AppContainer>
+    <App />
+  </AppContainer>,
+  rootEl,
 );
 
 if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default; // eslint-disable-line global-require
-    Inferno.render(
-        <NextApp />,
-        rootEl,
+    ReactDOM.render(
+      <AppContainer>
+        <NextApp />
+      </AppContainer>,
+      rootEl,
     );
   });
 }
