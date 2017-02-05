@@ -1,9 +1,12 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:inferno/recommended"],
   "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true,
     "jest": true
-  }
+  },
+  "rules": {
+		"react/react-in-jsx-scope": 0
+	}
 }
