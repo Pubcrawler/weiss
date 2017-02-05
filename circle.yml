@@ -1,10 +1,38 @@
-test:
-  override:
-    - npm run build
-    - npm run lint
-    - npm run test
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: pubcrawler-frontend
+version: 2
+executorType: docker
+containerInfo:
+  - image: node:latest
+
+stages:
+  build:
+    workDir: ~/weiss
+    steps:
+      - type: add-ssh-keys
+      - type: checkout
+
+      # Install yarn
+      - type: shell
+        command: npm install yarn -g
+
+      # Build and test
+      - type: shell
+        command: yarn install
+      - type: shell
+        command: yarn build
+      - type: shell
+        command: yarn lint
+      - type: shell
+        command: yarn test
+
+      # Deploy if master
+      - type: deploy
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            echo 'heroku.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAu8erSx6jh+8ztsfHwkNeFr/SZaSOcvoa8AyMpaerGIPZDB2TKNgNkMSYTLYGDK2ivsqXopo2W7dpQRBIVF80q9mNXy5tbt1WE04gbOBB26Wn2hF4bk3Tu+BNMFbvMjPbkVlC2hcFuQJdH4T2i/dtauyTpJbD/6ExHR9XYVhdhdMs0JsjP/Q5FNoWh2ff9YbZVpDQSTPvusUp4liLjPfa/i0t+2LpNCeWy8Y+V9gUlDWiyYwrfMVI0UwNCZZKHs1Unpc11/4HLitQRtvuk0Ot5qwwBxbmtvCDKZvj1aFBid71/mYdGRPYZMIxq1zgP1acePC1zfTG/lvuQ7d0Pe0kaw==' >> ~/.ssh/known_hosts
+            git push git@heroku.com:pubcrawler-weiss.git ${CIRCLE_BRANCH}:master -f
+          fi
+
+      # Save artifacts
+      - type: artifacts-store
+        path: ~/weiss/dist/
+        destination: dist
