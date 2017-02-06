@@ -11,6 +11,7 @@
     "start": "babel-node server/server.js",
     "start-production": "NODE_ENV=production node dist/server.js",
     "lint": "eslint --ignore-path .gitignore . --ext .js --ext .jsx",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test": "jest"
   },
   "dependencies": {
@@ -41,5 +42,8 @@
     "webpack-dev-middleware": "^1.9.0",
     "webpack-hot-middleware": "^2.15.0",
     "webpack-node-externals": "^1.5.4"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-flow-strip-types": "^6.22.0"
   }
 }
