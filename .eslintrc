@@ -6,4 +6,7 @@
     "node": true,
     "jest": true
   },
+  "rules": {
+    "inferno/prop-types": "off"
+    }
 }

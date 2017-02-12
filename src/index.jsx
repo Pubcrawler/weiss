@@ -1,28 +1,18 @@
 import Inferno from 'inferno';
-import { Provider } from 'inferno-redux';
-import App from './App';
-import createStore from './store/store';
+import createBrowserHistory from 'history/createBrowserHistory';
+import Root from './components/root';
+import configureStore from './configureStore';
 
 const rootEl = document.getElementById('root');
-
-const store = createStore();
+const store = configureStore();
+const history = createBrowserHistory();
 
 Inferno.render(
-  <Provider store={store} key="provider">
-    <App />
-  </Provider>
+  <Root store={store} history={history} />
   , rootEl,
 );
 
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NextApp = require('./App').default; // eslint-disable-line global-require
-    Inferno.render(
-      <Provider store={store}>
-        <NextApp />
-      </Provider>,
-      rootEl,
-    );
-  });
+  module.hot.accept();
 }
