@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:inferno/recommended"],
+  "extends": ["eslint-config-airbnb-base","plugin:inferno/recommended"],
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -7,6 +7,6 @@
     "jest": true
   },
   "rules": {
-		"react/react-in-jsx-scope": 0
-	}
+    "inferno/prop-types": "off"
+    }
 }

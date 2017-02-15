@@ -1,18 +1,18 @@
 import Inferno from 'inferno';
-import App from './App';
+import createBrowserHistory from 'history/createBrowserHistory';
+import Root from './components/root.jsx';
+import configureStore from './configureStore';
 
 const rootEl = document.getElementById('root');
+const store = configureStore();
+const history = createBrowserHistory();
+
 Inferno.render(
-  <App />,
-  rootEl,
+  <Root store={store} history={history} />
+  , rootEl,
 );
 
+
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NextApp = require('./App').default; // eslint-disable-line global-require
-    Inferno.render(
-      <NextApp />,
-      rootEl,
-    );
-  });
+  module.hot.accept();
 }
