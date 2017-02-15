@@ -5,7 +5,10 @@ const nodeExternals = require('webpack-node-externals');
 module.exports = [{
   context: path.resolve(__dirname, './src'),
   target: 'web',
-  entry: './index.jsx',
+  entry: [
+    'babel-polyfill',
+    './index.jsx',
+  ],
   output: {
     filename: 'pubcrawler.bundle.js',
     path: path.resolve(__dirname, './dist/assets/'),

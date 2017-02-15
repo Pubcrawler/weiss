@@ -12,7 +12,6 @@ Inferno.render(
   , rootEl,
 );
 
-
 if (module.hot) {
   module.hot.accept();
 }
