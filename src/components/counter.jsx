@@ -6,7 +6,6 @@ import { INCREASE, DECREASE } from '../constants/counter';
 class Counter extends Component {
   render() {
     const store = this.context.store;
-    const state = store.getState();
 
     const increase = () => {
       store.dispatch({
@@ -21,11 +20,11 @@ class Counter extends Component {
 
     return (
       <div>
-        <button onClick={increase}>
-          Increase!
+        <button className="btn btn-default" onClick={increase}>
+          Increase
         </button>
-        <button onClick={decrease}>
-          Decrease!
+        <button className="btn btn-default" onClick={decrease}>
+          Decrease
         </button>
         <h1>{this.props.count}</h1>
       </div>
@@ -33,11 +32,9 @@ class Counter extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    count: state.counter.c,
-  }
-}
+const mapStateToProps = state => ({
+  count: state.counter.c,
+});
 
 export default connect(
     mapStateToProps,

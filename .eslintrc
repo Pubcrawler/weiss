@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:inferno/recommended"],
+  "extends": ["eslint-config-airbnb-base","plugin:inferno/recommended"],
   "parser": "babel-eslint",
   "env": {
     "browser": true,

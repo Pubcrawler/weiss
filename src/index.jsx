@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import createBrowserHistory from 'history/createBrowserHistory';
-import Root from './components/root';
+import Root from './components/root.jsx';
 import configureStore from './configureStore';
 
 const rootEl = document.getElementById('root');

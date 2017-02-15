@@ -1,8 +1,8 @@
 import Inferno from 'inferno';
 import { Provider } from 'inferno-redux';
 import { Router, Route } from 'inferno-router';
-import App from './app';
-import Counter from './counter'
+import App from './app.jsx';
+import Counter from './counter.jsx';
 
 const Root = ({ store, history }) => (
   <Provider store={store}>
