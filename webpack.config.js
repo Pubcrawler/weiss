@@ -6,7 +6,6 @@ module.exports = {
   context: path.resolve(__dirname, './src'),
   target: 'web',
   entry: [
-    'babel-polyfill',
     'webpack-hot-middleware/client',
     './index.jsx',
   ],
