@@ -35,7 +35,7 @@
     "inferno-devtools": "^1.2.2",
     "inferno-redux": "^1.2.2",
     "inferno-router": "^1.2.2",
-    "jest": "^18.1.0",
+    "jest": "^19.0.1",
     "jest-cli": "^18.1.0",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
