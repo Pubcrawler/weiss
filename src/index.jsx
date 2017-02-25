@@ -1,11 +1,11 @@
 import Inferno from 'inferno';
-import createBrowserHistory from 'history/createBrowserHistory';
+import createHistory from 'history/createHashHistory';
 import Root from './components/root.jsx';
 import configureStore from './configureStore';
 
 const rootEl = document.getElementById('root');
 const store = configureStore();
-const history = createBrowserHistory();
+const history = createHistory();
 
 Inferno.render(
   <Root store={store} history={history} />
