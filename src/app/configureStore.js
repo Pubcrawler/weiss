@@ -3,8 +3,8 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import createLogger from 'redux-logger';
 
-import rootReducer from './reducers/';
-import sagas from './sagas/index';
+import rootReducer from './reducers';
+import sagas from './sagas';
 
 export default function configureStore() {
   const sagaMiddleware = createSagaMiddleware();

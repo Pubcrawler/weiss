@@ -1,8 +1,8 @@
 import Inferno from 'inferno';
 import createHistory from 'history/createHashHistory';
-import Root from './components/root.jsx';
-import configureStore from './configureStore';
-import './components/App.css';
+import Root from './app/root.jsx';
+import configureStore from './app/configureStore';
+import './app/styles';
 
 const rootEl = document.getElementById('root');
 const store = configureStore();

@@ -1,4 +1,4 @@
-import { FETCH_BEER_SUCCESS, FETCH_BEER_FAILED } from '../constants/beer';
+import { FETCH_BEER_SUCCESS, FETCH_BEER_FAILED } from './actions';
 
 const initialState = {
   beerList: undefined,

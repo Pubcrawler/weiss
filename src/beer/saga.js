@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { FETCH_BEER, FETCH_BEER_SUCCESS, FETCH_BEER_FAILED } from '../constants/beer';
+import { FETCH_BEER, FETCH_BEER_SUCCESS, FETCH_BEER_FAILED } from './actions';
 import api from '../services';
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
