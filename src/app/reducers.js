@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
-import beer from './beer';
+import counter from '../counter/reducer';
+import beer from '../beer/reducer';
 
 export default combineReducers({
   counter,

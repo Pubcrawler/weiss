@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-redux';
-import { FETCH_BEER } from '../constants/beer';
+import { FETCH_BEER } from './actions';
 
 class Beer extends Component {
   render() {
@@ -10,7 +10,7 @@ class Beer extends Component {
       null;
 
     return (
-      <div>
+      <div className="beer">
         <button onClick={this.props.fetchUser}>
           Fetch beer list
         </button>

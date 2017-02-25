@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-redux';
-import { INCREASE, DECREASE } from '../constants/counter';
+import { INCREASE, DECREASE } from './actions';
 
 class Counter extends Component {
   render() {
@@ -19,7 +19,7 @@ class Counter extends Component {
     };
 
     return (
-      <div>
+      <div className="counter">
         <button className="btn btn-default" onClick={increase}>
           Increase
         </button>

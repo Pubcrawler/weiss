@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import createBrowserHistory from 'history/createBrowserHistory';
-import configureStore from '../configureStore';
+import configureStore from './configureStore';
 import Root from './root.jsx';
 
 
