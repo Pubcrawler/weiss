@@ -17,14 +17,20 @@ module.exports = [{
     extensions: ['.js', '.jsx'],
   },
   module: {
-    rules: [{
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      use: [{
-        loader: 'babel-loader',
-        options: { presets: ['latest'] },
+    rules: [
+      {
+        test: /(\.css)$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader',
+          options: { presets: ['latest'] },
+        }],
       }],
-    }],
   },
   plugins: [
     new HtmlWebpackPlugin({
