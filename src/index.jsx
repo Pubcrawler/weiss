@@ -2,6 +2,7 @@ import Inferno from 'inferno';
 import createHistory from 'history/createHashHistory';
 import Root from './components/root.jsx';
 import configureStore from './configureStore';
+import './components/App.css';
 
 const rootEl = document.getElementById('root');
 const store = configureStore();
