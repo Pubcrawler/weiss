@@ -11,7 +11,7 @@ class Beer extends Component {
 
     return (
       <div className="beer">
-        <button onClick={this.props.fetchUser}>
+        <button className="ui primary button" onClick={this.props.fetchUser}>
           Fetch beer list
         </button>
         {beerList}
