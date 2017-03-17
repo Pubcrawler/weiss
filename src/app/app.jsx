@@ -10,6 +10,7 @@ class App extends Component {
         <ul className="header">
           <li><Link to="/">Beer</Link></li>
           <li><Link to="/counter">Counter</Link></li>
+          <li><Link to="/stops">Stops</Link></li>
         </ul>
         {this.props.children}
       </div>
