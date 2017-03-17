@@ -10,10 +10,6 @@ stages:
       - type: add-ssh-keys
       - type: checkout
 
-      # Install yarn
-      - type: shell
-        command: npm install yarn -g
-
       # Build and test
       - type: shell
         command: yarn install
