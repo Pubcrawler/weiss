@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { FETCH_STOPS, FETCH_STOPS_SUCCESS, FETCH_STOPS_FAILED } from './actions';
-import api from '../services';
+import api from '../../services';
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchStops() {

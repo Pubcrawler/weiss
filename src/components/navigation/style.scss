@@ -1,0 +1,33 @@
+.bar {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  border-bottom:1pt solid grey;
+  padding: 20px;
+
+  a { color: inherit; }
+  a:hover {
+    transform: scale(1.1);
+  	-webkit-transition: .3s ease-in-out;
+  	transition: .3s ease-in-out;
+  }
+
+  .createCrawl {
+    flex: 1;
+  }
+  .header {
+    flex: 3;
+    text-align: center;
+    font-size: 2em;
+  }
+  .auth {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    .element {
+      text-align: right;
+      flex: 1;
+    }
+  }
+}
