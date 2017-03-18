@@ -19,9 +19,9 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /(\.css)$/,
+        test: /(\.scss)$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader'],
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(js|jsx)$/,
