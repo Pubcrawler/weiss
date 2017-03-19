@@ -1,0 +1,56 @@
+.crawls {
+  margin: 20px;
+
+  .header {
+    text-align: left;
+    font-size: 2em;
+
+  }
+
+  .crawl-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .crawl-teaser {
+    color: black;
+    margin: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #FAFAFA;
+    .picture {
+      background-image: url('http://esq.h-cdn.co/assets/cm/15/06/54d3cdbba4f40_-_esq-01-bar-lgn.jpg');
+      filter: grayscale(100%);
+      background-size: cover;
+
+      color: white;
+      vertical-align: middle;
+
+      width: 100%;
+      height: 150px;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .contact {
+      margin-bottom: 10px;
+    }
+
+    .viewCrawl {
+      width: 100%;
+    }
+
+    .participants {
+      margin-top: 5px;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  .crawl-teaser:hover {
+    transform: scale(1.05);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+  }
+}
