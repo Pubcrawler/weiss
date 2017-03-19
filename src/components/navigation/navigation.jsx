@@ -11,15 +11,17 @@ class Navigation extends Component {
   }
   render() {
     return (
-      <div className="bar">
-        <Link className="createCrawl" to="/create">Create a Crawl</Link>
-        <Link className="header" to="/">PubCrawler</Link>
-        <div className="auth">
-          {this.state.loggedIn ? <Link className="element" to="/logout">Logout</Link> :
-          <Link className="element" to="/login">Log in</Link>}
-          {!this.state.loggedIn && <Link className="element" to="/login">Sign up</Link>}
+      <nav>
+        <div className="bar">
+          <Link className="createCrawl" to="/create">Create a Crawl</Link>
+          <Link className="header" to="/">PubCrawler</Link>
+          <div className="auth">
+            {this.state.loggedIn ? <Link className="element" to="/logout">Logout</Link> :
+            <Link className="element" to="/login">Log in</Link>}
+            {!this.state.loggedIn && <Link className="element" to="/login">Sign up</Link>}
+          </div>
         </div>
-      </div>
+      </nav>
     );
   }
 }
