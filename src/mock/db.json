@@ -1,0 +1,12 @@
+{
+  "stops": [
+    {"id":1,"title":"Jenkins, Dickinson and Koepp","address":"95 Maywood Center","city":"Brumado","lat":-14.20361,"lng":-41.66528},
+    {"id":2,"title":"Witting, Krajcik and Oberbrunner","address":"98400 Reinke Park","city":"Thākurgaon","lat":26.03097,"lng":88.46989},
+    {"id":3,"title":"Kassulke, Weimann and Klein","address":"90 Columbus Drive","city":"Shiwan","lat":21.66803,"lng":110.53631},
+    {"id":4,"title":"Baumbach-Dooley","address":"03059 Sundown Lane","city":"Yangsha","lat":34.83155,"lng":103.66816},
+    {"id":5,"title":"Stark Inc","address":"76877 Bluestem Lane","city":"Brudzew","lat":52.09949,"lng":18.60432},
+    {"id":6,"title":"Orn, Dach and Zboncak","address":"6384 Clarendon Center","city":"Asíni","lat":37.54431,"lng":22.86435},
+    {"id":7,"title":"Lynch, Hermiston and Crona","address":"39284 Warner Alley","city":"Dimbokro","lat":6.64678,"lng":-4.70519},
+    {"id":8,"title":"Mitchell-Swift","address":"0 Mendota Parkway","city":"Mehmand Chak","lat":32.78518,"lng":73.82306}
+  ]
+}
