@@ -1,3 +1,4 @@
 // Import styling to this file
-import '../beer/style.css';
-import '../counter/style.css';
+import '../components/stop-list/style.scss';
+import '../components/stop/style.scss';
+import '../components/navigation/style.scss';

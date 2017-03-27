@@ -18,6 +18,17 @@ Run ESlint:
 $ yarn lint
 ```
 
+Mock API (src/mock):
+Install json-server
+```
+npm install -g json-server
+```
+
+Run:
+```
+json-server --watch db.json
+```
+
 ## Production
 Build the application by running:
 ```
