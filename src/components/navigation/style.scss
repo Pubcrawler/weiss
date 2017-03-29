@@ -12,16 +12,27 @@
   	transition: .3s ease-in-out;
   }
 
-  .createCrawl {
-    flex: 1;
+  .left {
+    flex: 2;
+    display: flex;
+    justify-content: flex-start;
+    .element {
+      flex: 1;
+    }
   }
-  .header {
-    flex: 3;
-    text-align: center;
-    font-size: 2em;
+
+  .center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    .header {
+      text-align: center;
+      font-size: 2em;
+    }
   }
-  .auth {
-    flex: 1;
+
+  .right {
+    flex: 2;
     display: flex;
     justify-content: flex-end;
 

@@ -13,9 +13,14 @@ class Navigation extends Component {
     return (
       <nav>
         <div className="bar">
-          <Link className="createCrawl" to="/create">Create a Crawl</Link>
-          <Link className="header" to="/">PubCrawler</Link>
-          <div className="auth">
+          <div className="left">
+            <Link className="element" to="/create">Create a Crawl</Link>
+            <Link className="element" to="/find">Find</Link>
+          </div>
+          <div className="center">
+            <Link className="header" to="/">PubCrawler</Link>
+          </div>
+          <div className="right">
             {this.state.loggedIn ? <Link className="element" to="/logout">Logout</Link> :
             <Link className="element" to="/login">Log in</Link>}
             {!this.state.loggedIn && <Link className="element" to="/login">Sign up</Link>}
