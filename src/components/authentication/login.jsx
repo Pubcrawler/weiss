@@ -16,6 +16,8 @@ class Login extends Component {
     const login = () => {
       this.context.store.dispatch({
         type: LOGIN,
+        username: this.state.username,
+        password: this.state.password,
       });
     };
 

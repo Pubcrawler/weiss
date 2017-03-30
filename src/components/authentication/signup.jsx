@@ -17,6 +17,9 @@ class Signup extends Component {
     const signup = () => {
       this.context.store.dispatch({
         type: SIGN_UP,
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
       });
     };
 
