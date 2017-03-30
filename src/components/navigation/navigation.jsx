@@ -23,7 +23,7 @@ class Navigation extends Component {
           <div className="right">
             {this.state.loggedIn ? <Link className="element" to="/logout">Logout</Link> :
             <Link className="element" to="/login">Log in</Link>}
-            {!this.state.loggedIn && <Link className="element" to="/login">Sign up</Link>}
+            {!this.state.loggedIn && <Link className="element" to="/signup">Sign up</Link>}
           </div>
         </div>
       </nav>
