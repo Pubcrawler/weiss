@@ -16,6 +16,18 @@ const api = {
     const url = `${baseURL}/crawls/${crawlId}`;
     return request.get(url).set('Accept', 'application/json');
   },
+
+  signup(username, email, password) {
+    console.log('TODO - signup', username, email, password);
+    // const url = `${baseURL}/register`;
+    // return request.get(url).set('Accept', 'application/json');
+  },
+
+  login(username, password) {
+    console.log('TODO - login', username, password);
+    // const url = `${baseURL}/register`;
+    // return request.get(url).set('Accept', 'application/json');
+  },
 };
 
 export default api;

@@ -5,6 +5,8 @@ import App from './app.jsx';
 import StopList from '../components/stop-list/stop-list.jsx';
 import CrawlList from '../components/crawl/crawl-list.jsx';
 import Crawl from '../components/crawl/crawl.jsx';
+import Signup from '../components/authentication/signup.jsx';
+import Login from '../components/authentication/login.jsx';
 
 const Root = ({ store, history }) => (
   <Provider store={store}>
@@ -13,6 +15,8 @@ const Root = ({ store, history }) => (
         <IndexRoute component={ StopList }/>
         <Route path="find" component={ CrawlList } />
         <Route path='/crawl/:id' component={ Crawl } />
+        <Route path='/signup' component={ Signup } />
+        <Route path='/login' component={ Login } />
       </Route>
     </Router>
   </Provider>

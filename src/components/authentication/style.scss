@@ -1,0 +1,21 @@
+.authentication {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  .form {
+    width: 70%;
+
+    @media screen and (min-width: 480px) {
+      width: 300px;
+    }
+    text-align: center;
+
+    .button {
+      width: 100%;
+    }
+    .input {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+}
