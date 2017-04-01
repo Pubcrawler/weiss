@@ -1004,5 +1004,10 @@
     {"userId":408,"stopId":467},
     {"userId":254,"stopId":181},
     {"userId":216,"stopId":424}
+  ],
+  "auth" : [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTYiLCJ1c2VybmFtZSI6Imhhc24iLCJlbWFpbCI6ImhhbnNAdGVzdC5ubyJ9.oiJg_X57X-DJhJ2FUg98KjEeAZp0wlIwDlW4lZTfzj0"
+    }
   ]
 }
