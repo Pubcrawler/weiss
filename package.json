@@ -37,7 +37,7 @@
     "inferno-create-element": "^1.2.2",
     "inferno-devtools": "^1.2.2",
     "inferno-redux": "^1.2.2",
-    "inferno-router": "^3.0.0",
+    "inferno-router": "^3.0.1",
     "jest": "^19.0.1",
     "jest-cli": "^19.0.1",
     "json-server": "^0.9.6",
