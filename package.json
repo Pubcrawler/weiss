@@ -33,7 +33,7 @@
     "history": "^4.5.1",
     "html-webpack-plugin": "^2.26.0",
     "inferno": "^1.2.2",
-    "inferno-component": "^3.0.2",
+    "inferno-component": "^3.0.3",
     "inferno-create-element": "^1.2.2",
     "inferno-devtools": "^1.2.2",
     "inferno-redux": "^1.2.2",
