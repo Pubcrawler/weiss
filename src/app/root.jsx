@@ -12,7 +12,7 @@ const Root = ({ store, history }) => (
   <Provider store={store}>
     <Router history={ history }>
       <Route component={ App }>
-        <IndexRoute component={ StopList }/>
+        <IndexRoute component={ StopList } />
         <Route path="find" component={ CrawlList } />
         <Route path='/crawl/:id' component={ Crawl } />
         <Route path='/signup' component={ Signup } />
