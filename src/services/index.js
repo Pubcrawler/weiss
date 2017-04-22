@@ -5,7 +5,7 @@ const baseURL = 'http://localhost:3000';
 const customGet = url =>
   request.get(url)
     .set('Accept', 'application/json')
-    .set('Authorization', localStorage.getItem('id_token'));
+    .set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
 
 const api = {
   fetchStops() {
