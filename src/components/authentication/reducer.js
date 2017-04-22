@@ -1,4 +1,3 @@
-import cookie from 'react-cookie';
 import jwtDecode from 'jwt-decode';
 import {
   LOGIN_FAILED,
@@ -7,7 +6,7 @@ import {
   LOGOUT_SUCCESS,
 } from './actions';
 
-const token = cookie.load('token');
+const token = localStorage.getItem('id_token');
 const decodedToken = token ? jwtDecode(token) : undefined;
 const initialState = {
   profile: decodedToken,

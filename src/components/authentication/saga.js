@@ -1,5 +1,4 @@
 import { call, takeEvery, put } from 'redux-saga/effects';
-import cookie from 'react-cookie';
 import jwtDecode from 'jwt-decode';
 import {
   SIGN_UP,
@@ -18,7 +17,7 @@ function* signup(action) {
     const request = yield call(api.signup, action.username, action.email, action.password);
     const token = request.body[0].token;
     const decodedToken = jwtDecode(token);
-    cookie.save('token', request.body[0].token, { path: '/' });
+    localStorage.setItem('id_token', request.body[0].token);
     yield put({ type: LOGIN_SUCCESS, profile: decodedToken });
   } catch (e) {
     console.log(e);
@@ -30,7 +29,7 @@ function* login(action) {
     const request = yield call(api.login, action.username, action.password);
     const token = request.body[0].token;
     const decodedToken = jwtDecode(token);
-    cookie.save('token', request.body[0].token, { path: '/' });
+    localStorage.setItem('id_token', request.body[0].token);
     yield put({ type: LOGIN_SUCCESS, profile: decodedToken });
   } catch (e) {
     yield put({ type: LOGIN_FAILED, error: 'Login failed' });
@@ -41,7 +40,7 @@ function* logout() {
   try {
     yield call(api.logout);
     yield put({ type: LOGOUT_SUCCESS });
-    cookie.remove('token');
+    localStorage.removeItem('id_token');
   } catch (e) {
     yield put({ type: LOGOUT_FAILED, error: 'Logout failed' });
   }

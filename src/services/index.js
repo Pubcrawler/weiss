@@ -1,12 +1,11 @@
 import request from 'superagent';
-import cookie from 'react-cookie';
 
 const baseURL = 'http://localhost:3000';
 
 const customGet = url =>
   request.get(url)
     .set('Accept', 'application/json')
-    .set('Authorization', cookie.load('token'));
+    .set('Authorization', localStorage.getItem('id_token'));
 
 const api = {
   fetchStops() {
