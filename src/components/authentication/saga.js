@@ -10,11 +10,16 @@ import {
   LOGOUT_FAILED,
   LOGOUT_SUCCESS,
 } from './actions';
+
 import api from '../../services';
 
 function* signup(action) {
   try {
-    yield call(api.signup, action.username, action.email, action.password);
+    const request = yield call(api.signup, action.username, action.email, action.password);
+    const token = request.body[0].token;
+    const decodedToken = jwtDecode(token);
+    cookie.save('token', request.body[0].token, { path: '/' });
+    yield put({ type: LOGIN_SUCCESS, profile: decodedToken });
   } catch (e) {
     console.log(e);
   }
