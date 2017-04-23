@@ -1,5 +1,4 @@
 import { call, takeEvery, put } from 'redux-saga/effects';
-import jwtDecode from 'jwt-decode';
 import {
   SIGN_UP,
   LOGIN,
@@ -16,8 +15,8 @@ function* signup(action) {
   try {
     const request = yield call(api.signup, action.username, action.email, action.password);
     const token = request.body[0].token;
-    const decodedToken = jwtDecode(token);
-    localStorage.setItem('id_token', request.body[0].token);
+    localStorage.setItem('id_token', token);
+    const decodedToken = atob(token.split('.')[1]);
     yield put({ type: LOGIN_SUCCESS, profile: decodedToken });
   } catch (e) {
     console.log(e);
@@ -28,8 +27,8 @@ function* login(action) {
   try {
     const request = yield call(api.login, action.username, action.password);
     const token = request.body[0].token;
-    const decodedToken = jwtDecode(token);
-    localStorage.setItem('id_token', request.body[0].token);
+    localStorage.setItem('id_token', token);
+    const decodedToken = atob(token.split('.')[1]);
     yield put({ type: LOGIN_SUCCESS, profile: decodedToken });
   } catch (e) {
     yield put({ type: LOGIN_FAILED, error: 'Login failed' });

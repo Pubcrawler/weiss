@@ -1,4 +1,3 @@
-import jwtDecode from 'jwt-decode';
 import {
   LOGIN_FAILED,
   LOGIN_SUCCESS,
@@ -7,7 +6,7 @@ import {
 } from './actions';
 
 const token = localStorage.getItem('id_token');
-const decodedToken = token ? jwtDecode(token) : undefined;
+const decodedToken = token ? atob(token.split('.')[1]) : undefined;
 const initialState = {
   profile: decodedToken,
   isAuthenticated: decodedToken !== undefined,
