@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import { Provider } from 'inferno-redux';
 import { Router, Route, IndexRoute } from 'inferno-router';
-import createBrowserHistory from 'history/createBrowserHistory';
+import createHistory from 'history/createHashHistory';
 import App from './app.jsx';
 import StopList from '../components/stop-list/stop-list.jsx';
 import CrawlList from '../components/crawl/crawl-list.jsx';
@@ -11,7 +11,7 @@ import Login from '../components/authentication/login.jsx';
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <Router history={ createBrowserHistory() }>
+    <Router history={ createHistory() }>
       <Route component={ App }>
         <IndexRoute component={ StopList } />
         <Route path="find" component={ CrawlList } />
