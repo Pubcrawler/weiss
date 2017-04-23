@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
-import logger from 'redux-logger';
 
 import rootReducer from './reducers';
 import sagas from './sagas';
@@ -10,9 +10,10 @@ export default function configureStore() {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(
     rootReducer,
-    applyMiddleware(
-      logger,
-      sagaMiddleware,
+    composeWithDevTools(
+      applyMiddleware(
+        sagaMiddleware,
+      ),
     ),
   );
   sagaMiddleware.run(sagas);

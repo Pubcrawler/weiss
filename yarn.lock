@@ -1607,10 +1607,6 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
-deep-diff@0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.4.tgz#aac5c39952236abe5f037a2349060ba01b00ae48"
-
 deep-extend@~0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.1.tgz#efe4113d08085f4e6f9687759810f807469e2253"
@@ -4086,10 +4082,6 @@ path-parse@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.5.tgz#3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1"
 
-path-parser@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/path-parser/-/path-parser-0.3.2.tgz#cfd3f7149717575bd053b9cdff97de8c3eac848b"
-
 path-to-regexp-es6@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/path-to-regexp-es6/-/path-to-regexp-es6-0.0.2.tgz#80cf615ce3220a29af9fe54f8862c730d9b56e0b"
@@ -4622,17 +4614,9 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-logger@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.0.tgz#f552052d8992d058cfcdb42b5c654fa5f7beb9cc"
-  dependencies:
-    deep-diff "0.3.4"
-
-redux-routing@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/redux-routing/-/redux-routing-0.3.1.tgz#eb8db4e5c9e5eb27c0976f17f3cd524e1cfcd388"
-  dependencies:
-    path-parser "^0.3.2"
+redux-devtools-extension@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.0.tgz#c8300d72630c00999302526204d47c360cc0637f"
 
 redux-saga@^0.14.3:
   version "0.14.3"
