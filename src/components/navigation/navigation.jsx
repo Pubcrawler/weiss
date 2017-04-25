@@ -1,15 +1,17 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { Link } from 'inferno-router';
+import { connect } from 'inferno-redux';
+import { LOGOUT } from '../authentication/actions';
 
 class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loggedIn: false,
-    };
-  }
   render() {
+    const logout = () => {
+      this.context.store.dispatch({
+        type: LOGOUT,
+      });
+    };
+
     return (
       <nav>
         <div className="bar">
@@ -21,9 +23,9 @@ class Navigation extends Component {
             <Link className="header" to="/">PubCrawler</Link>
           </div>
           <div className="right">
-            {this.state.loggedIn ? <Link className="element" to="/logout">Logout</Link> :
+            {this.props.isAuthenticated ? <Link className="element" onClick={logout} to="/logout">Logout</Link> :
             <Link className="element" to="/login">Log in</Link>}
-            {!this.state.loggedIn && <Link className="element" to="/signup">Sign up</Link>}
+            {!this.props.isAuthenticated && <Link className="element" to="/signup">Sign up</Link>}
           </div>
         </div>
       </nav>
@@ -31,4 +33,11 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.authentication.isAuthenticated,
+});
+
+export default connect(
+    mapStateToProps,
+)(Navigation);
