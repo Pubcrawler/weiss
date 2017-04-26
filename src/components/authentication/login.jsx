@@ -13,39 +13,55 @@ class Login extends Component {
   }
 
   render() {
+    const validate = () => {
+      if (!this.state.username) {
+        this.setState({ validationMessage: 'Invalid username' });
+      } else if (!this.state.password) {
+        this.setState({ validationMessage: 'Invalid password' });
+      }
+    };
+
     const login = () => {
-      this.context.store.dispatch({
-        type: LOGIN,
-        username: this.state.username,
-        password: this.state.password,
-      });
+      validate();
+      if (!this.state.validationMessage) {
+        this.context.store.dispatch({
+          type: LOGIN,
+          username: this.state.username,
+          password: this.state.password,
+        });
+      }
     };
 
     const setUsername = (e) => {
-      this.setState({ username: e.target.value });
+      this.setState({ username: e.target.value, validationMessage: undefined });
     };
 
     const setPassword = (e) => {
-      this.setState({ password: e.target.value });
+      this.setState({ password: e.target.value, validationMessage: undefined });
     };
 
 
     return (
       <div className="authentication">
         <div className="form">
+          {this.state.validationMessage &&
+            <div className="ui negative message">
+              {this.state.validationMessage}
+            </div>
+          }
           <div className="field">
             <div className="ui left icon input">
               <i className="user icon"></i>
-              <input type="text" placeholder="Username" onChange={setUsername}/>
+              <input type="text" placeholder="Username" onKeyUp={setUsername}/>
             </div>
           </div>
           <div className="field">
             <div className="ui left icon input">
               <i className="lock icon"></i>
-              <input type="password" placeholder="Password" onChange={setPassword}/>
+              <input type="password" placeholder="Password" onKeyUp={setPassword}/>
             </div>
           </div>
-          <div className="ui green basic button" onClick={login}>Login</div>
+          <button className="ui green basic button" onClick={login}>Login</button>
         </div>
       </div>
     );
