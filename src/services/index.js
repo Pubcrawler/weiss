@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://localhost:8080';
 
 const customGet = url =>
   request.get(url)
@@ -22,16 +22,28 @@ const api = {
     return customGet(url);
   },
 
-  signup(username, email, password) {
-    console.log('TODO - signup', username, email, password);
-    // const url = `${baseURL}/register`;
-    // return request.get(url).set('Accept', 'application/json');
+  signup(username, email, password, passwordConfirmation) {
+    const url = `${baseURL}/authentication/signup`;
+    return request.post(url)
+        .send({
+          username,
+          email,
+          password,
+          passwordConfirmation,
+        })
+        .set('Access-Control-Allow-Origin', '*')
+        .set('Accept', 'application/json');
   },
 
   login(username, password) {
-    console.log('TODO - login', username, password);
-    const url = `${baseURL}/auth?_page=1`;
-    return request.get(url).set('Accept', 'application/json');
+    const url = `${baseURL}/authentication/login`;
+    return request.post(url)
+        .send({
+          username,
+          password,
+        })
+        .set('Access-Control-Allow-Origin', '*')
+        .set('Accept', 'application/json');
   },
   logout() {
     console.log('TODO - logout');
