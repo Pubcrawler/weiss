@@ -10,6 +10,7 @@ class Signup extends Component {
       username: undefined,
       email: undefined,
       password: undefined,
+      passwordConfirmation: undefined,
     };
   }
 
@@ -21,6 +22,8 @@ class Signup extends Component {
         this.setState({ validationMessage: 'Invalid email' });
       } else if (!this.state.password) {
         this.setState({ validationMessage: 'Invalid password' });
+      } else if (!this.state.passwordConfirmation) {
+        this.setState({ validationMessage: 'Passwords do not match' });
       }
     };
 
@@ -32,6 +35,7 @@ class Signup extends Component {
           username: this.state.username,
           email: this.state.email,
           password: this.state.password,
+          passwordConfirmation: this.state.passwordConfirmation,
         });
       }
     };
@@ -46,6 +50,10 @@ class Signup extends Component {
 
     const setPassword = (e) => {
       this.setState({ password: e.target.value, validationMessage: undefined });
+    };
+
+    const setPasswordConfirmation = (e) => {
+      this.setState({ passwordConfirmation: e.target.value, validationMessage: undefined });
     };
 
     return (
@@ -72,6 +80,12 @@ class Signup extends Component {
             <div className="ui left icon input">
               <i className="lock icon"></i>
               <input type="password" placeholder="Password" onKeyUp={setPassword}/>
+            </div>
+          </div>
+          <div className="field">
+            <div className="ui left icon input">
+              <i className="lock icon"></i>
+              <input type="passwordConfirmation" placeholder="Confirm password" onKeyUp={setPasswordConfirmation}/>
             </div>
           </div>
           <div className="ui green basic button" onClick={signup}>

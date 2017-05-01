@@ -13,8 +13,14 @@ import api from '../../services';
 
 function* signup(action) {
   try {
-    const request = yield call(api.signup, action.username, action.email, action.password);
-    const token = request.body[0].token;
+    const request = yield call(
+      api.signup,
+      action.username,
+      action.email,
+      action.password,
+      action.passwordConfirmation,
+    );
+    const token = request.body.result;
     localStorage.setItem('id_token', token);
     const decodedToken = atob(token.split('.')[1]);
     yield put({ type: LOGIN_SUCCESS, profile: decodedToken });
@@ -25,8 +31,12 @@ function* signup(action) {
 
 function* login(action) {
   try {
-    const request = yield call(api.login, action.username, action.password);
-    const token = request.body[0].token;
+    const request = yield call(
+      api.login,
+      action.username,
+      action.password,
+    );
+    const token = request.body.result;
     localStorage.setItem('id_token', token);
     const decodedToken = atob(token.split('.')[1]);
     yield put({ type: LOGIN_SUCCESS, profile: decodedToken });
