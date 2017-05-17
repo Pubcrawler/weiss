@@ -43,7 +43,7 @@
     "inferno-devtools": "^3.0.5",
     "inferno-redux": "^3.0.5",
     "inferno-router": "^3.0.5",
-    "jest": "^20.0.1",
+    "jest": "^20.0.2",
     "jest-cli": "^19.0.1",
     "json-server": "^0.10.0",
     "node-sass": "^4.5.0",
