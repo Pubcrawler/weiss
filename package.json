@@ -32,7 +32,7 @@
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-inferno": "^6.9.2",
+    "eslint-plugin-inferno": "^7.0.1",
     "express": "^4.14.0",
     "flexboxgrid": "^6.3.1",
     "history": "^4.5.1",
