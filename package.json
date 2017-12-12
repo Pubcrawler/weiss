@@ -29,7 +29,7 @@
     "babel-preset-env": "^1.1.8",
     "babel-preset-latest": "^6.22.0",
     "css-loader": "^0.28.0",
-    "eslint": "^3.14.0",
+    "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-inferno": "^7.0.1",
